@@ -13,5 +13,8 @@ var amtAfterBills = 0; //Variable to store the amount the user has left after pa
 var amtAfterSaving = 0; //Variable to store the amount the user will have left after saving money
 var amtSaved = 0; //Variable to store the amount the user is saving
 
-
+//Input
+monthlyWage = prompt("Enter your monthly wages");
+monthlyBills = prompt("Enter your monthly bills");
+percentToSave = prompt("Enter the percentage you wish to save. \nEx: If you wish to save 15% you would enter 15.");
 
