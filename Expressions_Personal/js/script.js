@@ -23,5 +23,7 @@ amtAfterBills = monthlyWage - monthlyBills; //Subtracts the monthly bills from m
 amtSaved = amtAfterBills * (percentToSave / 100); //Divides percent to save by 100, then multiplies that by the amount leftover after bills to get the amount the user saves
 amtAfterSaving = amtAfterBills - amtSaved; //Calculates the amount the user has after saving by subtracting the amount saved from the amout the user has after their bills
 
+//Output
+console.log("You make $" + monthlyWage + " each month.  After paying $" + monthlyBills + " towards bills, that leaves you with $" + amtAfterBills + ".  You chose to save " + percentToSave + "% of this amount.  You will be putting " + amtSaved + " into savings and will have " + amtAfterSaving + " left to spend for the month.");  //Outputs a concatenated string to explain to the user the results of their input.  Also displays what they input so the users can verify they input the correct information
 
 
