@@ -34,6 +34,6 @@ avgReceived = totalReceived / numDays;//divides the total received by the number
 percentBroken = totalReceivedBroken / totalReceived * 100;//Calculates the percentage of devices received that are broken
 
 //Output
-console.log("The average number of " + deviceName + " received each day over a span of " + numDays + " day(s) is "+ avgReceived + ". \nThese devices had a " + percentBroken + "% fail rate."); //Outputs the desired information to the user
+console.log("The average number of " + deviceName + " received each day over a span of " + numDays + " day(s) is "+ avgReceived + ". \nOn average " + percentBroken + "% of these devices were broken and couldn't just be restored."); //Outputs the desired information to the user
 
 
