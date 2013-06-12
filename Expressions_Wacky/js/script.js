@@ -7,6 +7,14 @@
 
 //Variables
 const distanceToFullSail = 33897600;//length, in inches, from Full Sail to my house
+const inchPerMile = 63360; //number of inches in a mile
 var nameOfItem; //variable for the name of the item
 var lengthOfItem; //variable for the length of the item in inches
 var numProduced; //variable for the number of the item produced each year
+var result; //Variable to hold the result of true or false
+
+//Input
+nameOfItem = prompt("What is the name of the item? \nEx. Pencil");//Prompt for the user to input the name of the item
+lengthOfItem = prompt("How long is the item, in inches? \nEx. 10");//Prompt for the user to input the length of the item
+numProduced = prompt("How many " + nameOfItem + "are produced each year?");//Prompt for the user to input the number of the item produced each year
+
