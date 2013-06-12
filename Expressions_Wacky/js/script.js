@@ -17,7 +17,7 @@ var lengthProducedPerYr; //Variable to hold the length (in inches) of the item p
 //Input
 nameOfItem = prompt("What is the name of the item? \nEx. Pencil");//Prompt for the user to input the name of the item
 lengthOfItem = prompt("How long is the item, in inches? \nEx. 10");//Prompt for the user to input the length of the item
-numProduced = prompt("How many " + nameOfItem + "are produced each year?");//Prompt for the user to input the number of the item produced each year
+numProduced = prompt("How many " + nameOfItem + " are produced each year?");//Prompt for the user to input the number of the item produced each year
 
 //Calculations
 lengthProducedPerYr = lengthOfItem * numProduced;//Calculates the total length produced each year
@@ -32,9 +32,9 @@ if(distanceToFullSail < lengthProducedPerYr)//looks to see if the distance from 
 //Output
 if(result == true)
 {
-	console.log("Yes, your produce enough " + nameOfItem + "to reach from Charlotte, NC to Full Sail University.  It would be able to make the trip " + lengthProducedPerYr/distanceToFullSail + " times.");
+	console.log("Yes, you do produce enough " + nameOfItem + " to reach from Charlotte, NC to Full Sail University.  It would be able to make the trip " + lengthProducedPerYr/distanceToFullSail + " times.");
 }
 else
 {
-	console.log("No, your do not produce enough " + nameOfItem + "to reach from Charlotte, NC to Full Sail University.  It would only be able to make " + lengthProducedPerYr/distanceToFullSail + "% of the trip.");
+	console.log("No, you do not produce enough " + nameOfItem + " to reach from Charlotte, NC to Full Sail University.  It would only be able to make " + lengthProducedPerYr/distanceToFullSail + "% of the trip.");
 }
