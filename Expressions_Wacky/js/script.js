@@ -29,5 +29,12 @@ if(distanceToFullSail < lengthProducedPerYr)//looks to see if the distance from 
 	result = false;//sets result to false
 }
 
-
-
+//Output
+if(result == true)
+{
+	console.log("Yes, your produce enough " + nameOfItem + "to reach from Charlotte, NC to Full Sail University.  It would be able to make the trip " + lengthProducedPerYr/distanceToFullSail + " times.");
+}
+else
+{
+	console.log("No, your do not produce enough " + nameOfItem + "to reach from Charlotte, NC to Full Sail University.  It would only be able to make " + lengthProducedPerYr/distanceToFullSail + "% of the trip.");
+}
