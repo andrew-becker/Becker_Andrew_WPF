@@ -11,3 +11,15 @@ var vertPixels;//User inputted, holds the number of vertical pixels
 var bitDepth;//User inputted, holds the bit depth of the image
 const kbConvert = 8192;//Will be used in the calculations to convert the file size to kilobytes
 var fileSize;//holds the size (in KB) of the file, will be used in the output
+
+//Input
+horizontalPixels = prompt("Enter the number of horizontal pixels for the image.");
+if (horizontalPixels == "" || horizontalPixels < 1 || isNaN(horizontalPixels) == True)
+{
+	horizontalPixels = prompt("Invalid input! Input must be a number. \nValid numbers are 1 or greater.");
+}
+
+
+
+//Use isNaN() to output if the file size is too large or if it is ok
+
