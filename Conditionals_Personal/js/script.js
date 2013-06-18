@@ -45,7 +45,7 @@ var numBriquettes; //Will hold the result for the user
 	numBriquettes = userDiameter * coefficient;//multiplies the diameter of the grill by the coefficient to get the number of briquettes needed
 
 //Output
-	console.log("When cooking over " + typeOfCooking + " heat you will need to use " + numBriquettes + " charcoal briquettes when cooking on your Weber " + userDiameter + "\" grill.");//Output of information to the user through the console
+	console.log("When cooking over " + typeOfCooking + " heat you will need to use " + parseInt(numBriquettes) + " charcoal briquettes when cooking on your Weber " + userDiameter + "\" grill.");//Output of information to the user through the console, also chose to pass numBriquettes as an int since you wouldn't use a fraction of a briquette
 
 
 
