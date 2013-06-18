@@ -13,3 +13,45 @@ var typeOfCooking; //type of cooking (direct or indirect).  Will be input by use
 var coefficient; //will be used to multiply by the diameter of the grill to get the number of briquettes needed
 var numBriquettes; //Will hold the result for the user
 
+//Input
+	userDiameter = prompt("Enter the diameter of your Weber One-Touch grill. \nEx. If you have a 21 inch grill input 21.");
+	if(userDiameter == "" || isNaN(userDiameter) == true)
+	{
+		alert("Invalid input.  Must input a number.");
+		userDiameter = prompt("Enter the diameter of your Weber One-Touch grill. \nEx. If you have a 21 inch grill input 21.");
+	}
+	else if(userDiameter <= 0 || userDiameter > 40)
+	{
+		alert("Invalid input.  Number must be greater than 0 and less than 40");
+		userDiameter = prompt("Enter the diameter of your Weber One-Touch grill. \nEx. If you have a 21 inch grill input 21.");
+	}
+	//console.log(userDiameter);
+	typeOfCooking = prompt("Please choose a type of cooking. \nFor Indirect enter 1, for Direct enter 2");
+	if(typeOfCooking != 1 && typeOfCooking != 2)
+	{
+		typeOfCooking = prompt("Invalid input. \nPlease enter either 1 indirect cooking or 2 for direct cooking");
+	}
+
+//Calculations
+	if(typeOfCooking == 1)
+	{
+		typeOfCooking = "Indirect";
+		coefficient = 2;
+	}
+	else if(typeOfCooking == 2)
+	{
+		typeOfCooking = "Direct";
+		coefficient = 3.5;
+	}
+	numBriquettes = userDiameter * coefficient;
+
+	console.log(typeOfCooking + "  Type");
+	console.log(coefficient + "  Co");
+	console.log(userDiameter + "  Dia");
+	console.log(parseInt(numBriquettes) + "  Num");
+
+
+
+
+
+
