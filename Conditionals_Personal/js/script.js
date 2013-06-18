@@ -35,20 +35,18 @@ var numBriquettes; //Will hold the result for the user
 //Calculations
 	if(typeOfCooking == 1)
 	{
-		typeOfCooking = "Indirect";
+		typeOfCooking = "indirect";
 		coefficient = 2;
 	}
 	else if(typeOfCooking == 2)
 	{
-		typeOfCooking = "Direct";
+		typeOfCooking = "direct";
 		coefficient = 3.5;
 	}
 	numBriquettes = userDiameter * coefficient;
 
-	console.log(typeOfCooking + "  Type");
-	console.log(coefficient + "  Co");
-	console.log(userDiameter + "  Dia");
-	console.log(parseInt(numBriquettes) + "  Num");
+//Output
+	console.log("When cooking over " + typeOfCooking + " heat you will need to use " + numBriquettes + " charcoal briquettes when cooking on your Weber " + userDiameter + "\" grill.");
 
 
 
