@@ -13,22 +13,23 @@ const kbConvert = 8192;//Will be used in the calculations to convert the file si
 var fileSize;//holds the size (in KB) of the file, will be used in the output
 
 //Input
-horizontalPixels = prompt("Enter the number of horizontal pixels for the image.");
-if (horizontalPixels == "" || horizontalPixels < 1 || isNaN(horizontalPixels) == true)
+horizontalPixels = prompt("Enter the number of horizontal pixels for the image.");//Prompts the user to input the number of horizontal pixels in their image
+if (horizontalPixels == "" || horizontalPixels < 1 || isNaN(horizontalPixels) == true)//Verifies the user entered data, the data is 1 or greater, and that the user input was a number
 {
-	horizontalPixels = prompt("Invalid input! Input must be a number. \nValid numbers are 1 or greater.");
+	horizontalPixels = prompt("Invalid input! Input must be a number. \nValid numbers are 1 or greater.");//Informs the user their input was invalid, explains what the program is looking for in their input, and assigns that input to horizontalPixels
 }
-vertPixels = prompt("Enter the number of horizontal pixels for the image.");
-if (vertPixels == "" || vertPixels < 1 || isNaN(vertPixels) == true)
+vertPixels = prompt("Enter the number of horizontal pixels for the image.");//Prompts the user to input the number of horizontal pixels in their image
+if (vertPixels == "" || vertPixels < 1 || isNaN(vertPixels) == true)//Verifies the user entered data, the data is 1 or greater, and that the user input was a number
 {
-	vertPixels = prompt("Invalid input! Input must be a number. \nValid numbers are 1 or greater.");
+	vertPixels = prompt("Invalid input! Input must be a number. \nValid numbers are 1 or greater.");//Informs the user their input was invalid, explains what the program is looking for in their input, and assigns that input to vertPixels
 }
-bitDepth = prompt("Enter the bit depth for the image. \nValid numbers are 1, 2, 3, 4, 6, 8, 16, 24, or 32");
-if (bitDepth != "1" && bitDepth != "2" && bitDepth != "3" && bitDepth != "4" && bitDepth != "6" && bitDepth != "8" && bitDepth != "16" && bitDepth != "24" && bitDepth != "32")
+bitDepth = prompt("Enter the bit depth for the image. \nValid numbers are 1, 2, 3, 4, 6, 8, 16, 24, or 32");//Prompts the user to enter the bit depth of their image and assigns it to bitDepth
+if (bitDepth != "1" && bitDepth != "2" && bitDepth != "3" && bitDepth != "4" && bitDepth != "6" && bitDepth != "8" && bitDepth != "16" && bitDepth != "24" && bitDepth != "32")//Verifies that the variable bitDepth matches one of the accepted answers
 {
-	alert("Invalid Input");
-	bitDepth = prompt("Enter the bit depth for the image. \nValid numbers are 1, 2, 3, 4, 6, 8, 16, 24, or 32");
+	alert("Invalid Input");//Alerts the user that their input was invalid
+	bitDepth = prompt("Enter the bit depth for the image. \nValid numbers are 1, 2, 3, 4, 6, 8, 16, 24, or 32");//Prompts the user to re-input their value
 }
+
 
 
 
