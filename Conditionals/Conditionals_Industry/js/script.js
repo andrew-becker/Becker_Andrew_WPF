@@ -33,8 +33,7 @@ if (bitDepth != "1" && bitDepth != "2" && bitDepth != "3" && bitDepth != "4" && 
 //Calculations
 fileSize = (horizontalPixels * vertPixels * bitDepth) / kbConvert;//mutltiplies horizontal pixels, vertical pixels, and bit depth and divdes by 8192 to give us the number of kilobytes
 
-
-
-
-//Use ternary to output if the file size is too large or if it is ok
+//Output
+console.log("The file size of this image is " + fileSize + "KB.");//Outputs the filesize to the user
+(fileSize < 200) ? console.log("This is a good size for a web image") : console.log("Your image is a little large for the web.  You may want to reduce the file size");//Makes a recommendation to the user based on file size to tell them if the file is a good size or should be reduced
 
