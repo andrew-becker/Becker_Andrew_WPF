@@ -30,6 +30,9 @@ if (bitDepth != "1" && bitDepth != "2" && bitDepth != "3" && bitDepth != "4" && 
 	bitDepth = prompt("Enter the bit depth for the image. \nValid numbers are 1, 2, 3, 4, 6, 8, 16, 24, or 32");//Prompts the user to re-input their value
 }
 
+//Calculations
+fileSize = (horizontalPixels * vertPixels * bitDepth) / kbConvert;//mutltiplies horizontal pixels, vertical pixels, and bit depth and divdes by 8192 to give us the number of kilobytes
+
 
 
 
