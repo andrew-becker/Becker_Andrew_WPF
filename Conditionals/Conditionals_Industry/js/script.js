@@ -14,12 +14,23 @@ var fileSize;//holds the size (in KB) of the file, will be used in the output
 
 //Input
 horizontalPixels = prompt("Enter the number of horizontal pixels for the image.");
-if (horizontalPixels == "" || horizontalPixels < 1 || isNaN(horizontalPixels) == True)
+if (horizontalPixels == "" || horizontalPixels < 1 || isNaN(horizontalPixels) == true)
 {
 	horizontalPixels = prompt("Invalid input! Input must be a number. \nValid numbers are 1 or greater.");
+}
+vertPixels = prompt("Enter the number of horizontal pixels for the image.");
+if (vertPixels == "" || vertPixels < 1 || isNaN(vertPixels) == true)
+{
+	vertPixels = prompt("Invalid input! Input must be a number. \nValid numbers are 1 or greater.");
+}
+bitDepth = prompt("Enter the bit depth for the image. \nValid numbers are 1, 2, 3, 4, 6, 8, 16, 24, or 32");
+if (bitDepth != "1" && bitDepth != "2" && bitDepth != "3" && bitDepth != "4" && bitDepth != "6" && bitDepth != "8" && bitDepth != "16" && bitDepth != "24" && bitDepth != "32")
+{
+	alert("Invalid Input");
+	bitDepth = prompt("Enter the bit depth for the image. \nValid numbers are 1, 2, 3, 4, 6, 8, 16, 24, or 32");
 }
 
 
 
-//Use isNaN() to output if the file size is too large or if it is ok
+//Use ternary to output if the file size is too large or if it is ok
 
