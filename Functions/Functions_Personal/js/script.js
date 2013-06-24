@@ -7,38 +7,56 @@
 
 
 //variables
-	var calcCost = function(width, length, costPerSqFt, installFees)
+	var calcCost = function(width, length, costPerSqFt)
 	{
 		var totalCost;
-		totalCost = parseFloat(width) * parseFloat(length) * parseFloat(costPerSqFt) + parseFloat(installFees);
+		totalCost = parseFloat(width) * parseFloat(length) * parseFloat(costPerSqFt);
 		return totalCost;
 	}
-	var roomWidth;
-	var roomHeight;
+	var roomWidth = new Array();
+	var roomLength = new Array();
 	var carpetCost;
 	var fees;
-	var costForRoom;
+	var costForRoom = new Array();
 	var inputCheck;
+	var nameRoom = new Array();
+	var numRooms;
+	var totalCostOfCarpet = 0;
 
 //input
 	do
 	{
-		roomWidth = prompt("Enter the width of the room in feet");
-		inputCheck = inputValidation(roomWidth);
+		numRooms = prompt("Enter the number of rooms you will\nneed to buy carpet for.");
+		inputCheck = inputValidation(numRooms);
 		if (inputCheck == 0)
 		{
 			alert("Invalid input!.\nInput must be a number larger than 0.");
 		}
 	}while(inputCheck == 0);
-	do
+	
+	for(var i=0; i < numRooms; i++)
 	{
-		roomLength = prompt("Enter the length of the room in feet");
-		inputCheck = inputValidation(roomLength);
-		if (inputCheck == 0)
+		nameRoom[i] = prompt("Enter Name");
+		do
 		{
-			alert("Invalid input!.\nInput must be a number larger than 0.");
-		}
-	}while(inputCheck == 0);
+			roomWidth[i] = prompt("Enter the width of the room in feet");
+			inputCheck = inputValidation(roomWidth[i]);
+			if (inputCheck == 0)
+			{
+				alert("Invalid input!.\nInput must be a number larger than 0.");
+			}
+		}while(inputCheck == 0);
+		do
+		{
+			roomLength[i] = prompt("Enter the length of the room in feet");
+			inputCheck = inputValidation(roomLength[i]);
+			if (inputCheck == 0)
+			{
+				alert("Invalid input!.\nInput must be a number larger than 0.");
+			}
+		}while(inputCheck == 0);
+	}
+	
 	do
 	{
 		carpetCost = prompt("Enter the cost of the carpet per square feet.");
@@ -58,13 +76,23 @@
 		}
 	}while(inputCheck == 0);
 
+	for(i=0; i < numRooms; i++)
+	{
+		costForRoom[i] = calcCost(roomWidth[i], roomLength[i], carpetCost);
+		totalCostOfCarpet += costForRoom[i];
+		outputForCarpet(nameRoom[i], costForRoom[i]);
+	}
+
+(numRooms == 1) ? console.log("The cost for this room is $" + (totalCostOfCarpet + fees)) : console.log("The cost for all " + numRooms + " rooms is $" + totalCostOfCarpet + fees));
+
 
 //calculations
-costForRoom = calcCost(roomWidth, roomLength, carpetCost, fees);
-console.log(costForRoom);
+//costForRoom = calcCost(roomWidth, roomLength, carpetCost, fees);
 
 //output
+//console.log(nameRoom);
 
+//functions
 function inputValidation(value)
 {
 	if (value <= 0 || isNaN(value) == true)
@@ -75,4 +103,9 @@ function inputValidation(value)
 	{
 		return 1;
 	}
+}
+
+function outputForCarpet(roomName, roomCost)
+{
+	console.log(roomName + ":\nCost for carpet: $" + roomCost);
 }
