@@ -15,6 +15,8 @@ websiteWidth = inputWebsiteWidth();
 contentWidth = calcContentArea(websiteWidth);
 sidebarWidth = calcSidebar(contentWidth, websiteWidth);
 
+//Output
+console.log("Your website is " + websiteWidth + " pixels wide.  The content area should be " + contentWidth + " pixels wide, and the sidebar area should be " + sidebarWidth + " pixels wide.");
 
 //Functions
 function calcContentArea(origSize)
