@@ -11,6 +11,24 @@ var websiteWidth, contentWidth, sidebarWidth;
 //Input
 websiteWidth = inputWebsiteWidth();
 
+//Calculations
+contentWidth = calcContentArea(websiteWidth);
+sidebarWidth = calcSidebar(contentWidth, websiteWidth);
+
+
+//Functions
+function calcContentArea(origSize)
+{
+	var content = parseInt((origSize / 1.618));
+	return content;
+}
+
+function calcSidebar(contentArea, originalSize)
+{
+	var sidebar = originalSize - contentArea;
+	return sidebar;
+}
+
 function inputWebsiteWidth()
 {
 	var width;
