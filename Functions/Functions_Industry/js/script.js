@@ -37,7 +37,7 @@ function inputWebsiteWidth()
 	var validInput = true;
 	do{
 	width = prompt("Enter the width of your website in pixels:");
-	if(isNaN(width == true))
+	if(isNaN(width) == true)
 	{
 		alert("You must input a number.  Example: 1024");
 		validInput = false;
