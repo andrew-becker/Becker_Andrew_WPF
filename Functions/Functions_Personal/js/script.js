@@ -83,14 +83,8 @@
 		outputForCarpet(nameRoom[i], costForRoom[i]);
 	}
 
-(numRooms == 1) ? console.log("The cost for this room is $" + (totalCostOfCarpet + fees)) : console.log("The cost for all " + numRooms + " rooms is $" + totalCostOfCarpet + fees));
+(numRooms == 1) ? console.log("The cost for this room is $" + (parseFloat(totalCostOfCarpet) + parseFloat(fees))) : console.log("The total cost for all " + numRooms + " rooms including installation is $" + (parseFloat(totalCostOfCarpet) + parseFloat(fees)));
 
-
-//calculations
-//costForRoom = calcCost(roomWidth, roomLength, carpetCost, fees);
-
-//output
-//console.log(nameRoom);
 
 //functions
 function inputValidation(value)
@@ -107,5 +101,5 @@ function inputValidation(value)
 
 function outputForCarpet(roomName, roomCost)
 {
-	console.log(roomName + ":\nCost for carpet: $" + roomCost);
+	console.log(roomName + ":\nCost for carpet: $" + roomCost + "\n");
 }
