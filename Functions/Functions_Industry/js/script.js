@@ -11,26 +11,6 @@ var websiteWidth, contentWidth, sidebarWidth;
 //Input
 websiteWidth = inputWebsiteWidth();
 
-//Calculations
-contentWidth = calcContentArea(websiteWidth);
-sidebarWidth = calcSidebar(contentWidth, websiteWidth);
-
-//Output
-console.log("Your website is " + websiteWidth + " pixels wide.  The content area should be " + contentWidth + " pixels wide, and the sidebar area should be " + sidebarWidth + " pixels wide.");
-
-//Functions
-function calcContentArea(origSize)
-{
-	var content = parseInt((origSize / 1.618));
-	return content;
-}
-
-function calcSidebar(contentArea, originalSize)
-{
-	var sidebar = originalSize - contentArea;
-	return sidebar;
-}
-
 function inputWebsiteWidth()
 {
 	var width;
