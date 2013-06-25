@@ -59,50 +59,51 @@
 		}while(inputCheck == 0);//continues to loop until their input passes validation
 	}
 	
-	do
+	do//do while loop which takes user input for the cost of the carpet and validates the input
 	{
-		carpetCost = prompt("Enter the cost of the carpet per square feet.");
-		inputCheck = inputValidation(carpetCost);
-		if (inputCheck == 0)
+		carpetCost = prompt("Enter the cost of the carpet per square feet.");//prompts the user to input the cost of the carpet per sq ft
+		inputCheck = inputValidation(carpetCost);//passes user's input to the input validation function
+		if (inputCheck == 0)//checks to see if the function returned a 0
 		{
-			alert("Invalid input!.\nInput must be a number larger than 0.");
+			alert("Invalid input!.\nInput must be a number larger than 0.");//Alerts the user that their input did not pass validation
 		}
-	}while(inputCheck == 0);
-	do
+	}while(inputCheck == 0);//will continue to loop until the function does not return a 0
+	
+	do//do while loop which takes user input for the fees for carpet install and validates the input
 	{
-		fees = prompt("Enter the cost of installation.");
-		inputCheck = inputValidation(fees);
-		if (inputCheck == 0)
+		fees = prompt("Enter the cost of installation.");//Prompts the user to input the cost of install and assigns it to variable fees
+		inputCheck = inputValidation(fees);//passes the user's input to the input validation function
+		if (inputCheck == 0)//checks to see if the function returned a 0
 		{
-			alert("Invalid input!.\nInput must be a number larger than 0.");
+			alert("Invalid input!.\nInput must be a number larger than 0.");//alerts the user that their input not did pass validation
 		}
-	}while(inputCheck == 0);
+	}while(inputCheck == 0);//continues to loop until input validation function does not return a 0
 
 //Calculations and Output
-for(i=0; i < numRooms; i++)
+for(i=0; i < numRooms; i++)//the following code will loop for the number of rooms the user entered
 {
-	costForRoom[i] = calcCost(roomWidth[i], roomLength[i], carpetCost);
-	totalCostOfCarpet += costForRoom[i];
-	outputForCarpet(nameRoom[i], costForRoom[i]);
+	costForRoom[i] = calcCost(roomWidth[i], roomLength[i], carpetCost);//passes the room width, length, and the cost of the carpet to the function calcCost, returns the cost of the carpet for each room
+	totalCostOfCarpet += costForRoom[i];//calculates the total cost for the carpet for all of the rooms
+	outputForCarpet(nameRoom[i], costForRoom[i]);//outputs the cost of carpet to the user for each room
 }
 
-(numRooms == 1) ? console.log("The cost for this room is $" + (parseFloat(totalCostOfCarpet) + parseFloat(fees))) : console.log("The total cost for all " + numRooms + " rooms including installation is $" + (parseFloat(totalCostOfCarpet) + parseFloat(fees)));
+(numRooms == 1) ? console.log("The cost for this room is $" + (parseFloat(totalCostOfCarpet) + parseFloat(fees))) : console.log("The total cost for all " + numRooms + " rooms including installation is $" + (parseFloat(totalCostOfCarpet) + parseFloat(fees)));//displays an output to the user for the total cost of carpet.  Output varies based on the number of rooms for formatting and grammar reasons
 
 
 //functions
-function inputValidation(value)
+function inputValidation(value)//This function validates the user input for number values
 {
-	if (value <= 0 || isNaN(value) == true)
+	if (value <= 0 || isNaN(value) == true)//checks to see if the user's input is less than 0 or is not a number
 	{
-		return 0;
+		return 0;//returns 0 if the input is invalid
 	}
 	else
 	{
-		return 1;
+		return 1;//returns 1 if the input is valid
 	}
 }
 
-function outputForCarpet(roomName, roomCost)
+function outputForCarpet(roomName, roomCost)//function to output the cost of carpet for each room
 {
-	console.log(roomName + ":\nCost for carpet: $" + roomCost + "\n");
+	console.log(roomName + ":\nCost for carpet: $" + roomCost + "\n");//outputs the room name and on the next lines outputs the cost of the carpet for that room
 }
