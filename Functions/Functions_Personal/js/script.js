@@ -7,21 +7,16 @@
 
 
 //variables
-	var calcCost = function(width, length, costPerSqFt)
+	var calcCost = function(width, length, costPerSqFt)//assigns this function to the variable calcCost, creates an anonymous functions
 	{
-		var totalCost;
-		totalCost = parseFloat(width) * parseFloat(length) * parseFloat(costPerSqFt);
-		return totalCost;
+		var totalCost = parseFloat(width) * parseFloat(length) * parseFloat(costPerSqFt);//creates the variable name total cost, multiplies width by length to get sq ft of the room, then multiplies that by the cost per square foot to get the total cost for the room
+		return totalCost;//returns the cost of the carpet for the room
 	}
-	var roomWidth = new Array();
-	var roomLength = new Array();
+	var totalCostOfCarpet = 0;
 	var carpetCost;
 	var fees;
-	var costForRoom = new Array();
 	var inputCheck;
-	var nameRoom = new Array();
 	var numRooms;
-	var totalCostOfCarpet = 0;
 
 //input
 	do
@@ -33,10 +28,15 @@
 			alert("Invalid input!.\nInput must be a number larger than 0.");
 		}
 	}while(inputCheck == 0);
+
+	var roomWidth = new Array(numRooms);
+	var roomLength = new Array(numRooms);
+	var costForRoom = new Array(numRooms);
+	var nameRoom = new Array(numRooms);
 	
 	for(var i=0; i < numRooms; i++)
 	{
-		nameRoom[i] = prompt("Enter Name");
+		nameRoom[i] = prompt("Enter the name of the room.\nEx. Master Bedroom");
 		do
 		{
 			roomWidth[i] = prompt("Enter the width of the room in feet");
