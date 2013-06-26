@@ -14,3 +14,42 @@ var totalPointsEarned;
 var totalPointsPossible;
 
 
+
+
+
+function inputNum(str)
+{
+	var num;
+	num = prompt("Enter the points earned.");
+	while(inputValidation(num)){
+		{
+			alert("Invalid input.  Input must be a number 0 or higher");
+			num = prompt("Enter the points earned.");
+		}
+	}
+}
+
+function inputValidation(value)//This function validates the user input for number values
+{
+	if (value < 0 || isNaN(value) == true)//checks to see if the user's input is less than 0 or is not a number
+	{
+		return true;//returns true if the input is invalid
+	}
+	else
+	{
+		return false;//returns false if the input is valid
+	}
+}
+
+function inputYesNo(){
+	var ans;
+	do{
+		ans = prompt("Do you have more grades to enter?\nYes or No");
+		ans = ans.toUpperCase();
+		if(ans != "YES" && ans != "NO")
+		{
+			alert("Invalid input.  Valid input is Yes or No.");
+		}
+	}while(ans != "YES" && ans != "NO");
+	return ans;
+}
