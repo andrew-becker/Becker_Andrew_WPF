@@ -12,6 +12,7 @@ var pointsPossible = new Array();
 var message;
 var totalPointsEarned;
 var totalPointsPossible;
+var gradeLetter;
 
 
 alert("For this program you will enter the points earned \nfor an assignment and then on the next prompt \nenter the possible points for that grade");
@@ -21,23 +22,26 @@ do{
 	{
 		arrayIndex++;
 	}
-	pointsEarned[arrayIndex] = inputNum();
-	pointsPossible[arrayIndex] = inputNum();
-	moreGrades = inputYesNo();
-}while(moreGrades == "YES");
+	str = "Enter the points earned for an assignment.";
+	pointsEarned[arrayIndex] = inputNum(str);
+	str = "Enter the points possible for the same assignment.";
+	pointsPossible[arrayIndex] = inputNum(str);
+}while(inputYesNo() == "YES");
 //console.log(pointsEarned.length);
+console.log(findGradeLetter(80));
 
 
 function inputNum(str)
 {
 	var num;
-	num = prompt("Enter the points earned.");
+	num = prompt(str);
 	while(inputValidation(num)){
 		{
 			alert("Invalid input.  Input must be a number 0 or higher");
-			num = prompt("Enter the points earned.");
+			num = prompt(str);
 		}
 	}
+	return num;
 }
 
 function inputValidation(value)//This function validates the user input for number values
@@ -64,3 +68,59 @@ function inputYesNo(){
 	}while(ans != "YES" && ans != "NO");
 	return ans;
 }
+
+function findGradeLetter(gradePercent)
+{
+	if(gradePercent >= 95)
+	{
+		return "A+";
+	}
+	else if(gradePercent >= 90)
+	{
+		return "A";
+	}
+	else if(gradePercent >= 85)
+	{
+		return "B+";
+	}
+	else if(gradePercent >= 80)
+	{
+		return "B";
+	}
+	else if(gradePercent >= 76)
+	{
+		return "C+";
+	}
+	else if(gradePercent >= 73)
+	{
+		return "C";
+	}
+	else if(gradePercent >= 70)
+	{
+		return "D";
+	}
+	else
+	{
+		return "F";
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
