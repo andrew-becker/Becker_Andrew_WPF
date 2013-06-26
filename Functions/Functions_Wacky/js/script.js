@@ -14,7 +14,18 @@ var totalPointsEarned;
 var totalPointsPossible;
 
 
+alert("For this program you will enter the points earned \nfor an assignment and then on the next prompt \nenter the possible points for that grade");
 
+do{
+	if(moreGrades == "YES")
+	{
+		arrayIndex++;
+	}
+	pointsEarned[arrayIndex] = inputNum();
+	pointsPossible[arrayIndex] = inputNum();
+	moreGrades = inputYesNo();
+}while(moreGrades == "YES");
+//console.log(pointsEarned.length);
 
 
 function inputNum(str)
