@@ -3,35 +3,32 @@
    Assignment: Functions - Wacky
 */
 
-//This program allows the user to enter the points possible and the points earned for each assignment.  It will calculate the final grade for the class and give them their letter grade and average.
+//This program allows the user to enter the points possible and the points earned for each assignment.  It will calculate the final grade for the class and give them their letter grade and average.  This program assumes grades are not weighted
 
-var arrayIndex = 0;
-var moreGrades = "NO";
-var pointsEarned = new Array();
-var pointsPossible = new Array();
-var str;
-var gradeLetter;
-var gradePercent;
+var arrayIndex = 0;//sets counter to 0
+var moreGrades = "NO";//initializes variable to hold user input for if they have more grades to enter to "NO"
+var pointsEarned = new Array();//array to hold the points earned for each grade
+var pointsPossible = new Array();//array to hold the points possible for each grade
+var gradeLetter;//holds the letter grade, a+, a, b+...etc
+var gradePercent;//holds the percentage for the user's grade
 
 
-alert("For this program you will enter the points earned \nfor an assignment and then on the next prompt \nenter the possible points for that grade");
+alert("For this program you will enter the points earned \nfor an assignment and then on the next prompt \nenter the possible points for that grade");//alert to inform the user what is expected from them in this program
 
-do{
-	if(moreGrades == "YES")
-	{
-		arrayIndex++;
-	}
-	str = "Enter the points earned for an assignment.";
-	pointsEarned[arrayIndex] = inputNum(str);
-	str = "Enter the points possible for the same assignment.";
-	pointsPossible[arrayIndex] = inputNum(str);
+do{//do while to take input from the user
+	//if(moreGrades == "YES")//if statement to check if the user is entering more grades
+	//{
+	//	arrayIndex++;//if the user if entering more grades this will increment the array index
+	//}
+	pointsEarned[pointsEarned.length] = inputNum("Enter the points earned for an assignment.");
+	pointsPossible[pointsPossible.length] = inputNum("Enter the points possible for the same assignment.");
 	moreGrades = inputYesNo();
 }while(moreGrades == "YES");
 
 gradePercent = calcGradePercent(pointsEarned, pointsPossible, pointsEarned.length);
 gradeLetter = findGradeLetter(gradePercent);
 
-if(gradeLetter == "A" || gradeLetter == "E")
+if(gradeLetter == "A" || gradeLetter == "A+")
 {
 	console.log("You earned an " + gradeLetter + " for this class with a " + parseInt(gradePercent) + "%.");
 }
