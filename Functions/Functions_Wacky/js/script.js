@@ -16,14 +16,10 @@ var gradePercent;//holds the percentage for the user's grade
 alert("For this program you will enter the points earned \nfor an assignment and then on the next prompt \nenter the possible points for that grade");//alert to inform the user what is expected from them in this program
 
 do{//do while to take input from the user
-	//if(moreGrades == "YES")//if statement to check if the user is entering more grades
-	//{
-	//	arrayIndex++;//if the user if entering more grades this will increment the array index
-	//}
-	pointsEarned[pointsEarned.length] = inputNum("Enter the points earned for an assignment.");
-	pointsPossible[pointsPossible.length] = inputNum("Enter the points possible for the same assignment.");
-	moreGrades = inputYesNo();
-}while(moreGrades == "YES");
+	pointsEarned[pointsEarned.length] = inputNum("Enter the points earned for an assignment.");//passes an input statement to the inputNum function, then sets the input equal to the array using the array length as the index....this array holds the points earned for each assignment
+	pointsPossible[pointsPossible.length] = inputNum("Enter the points possible for the same assignment.");//passes an input statement to the inputNum function, then sets the input equal to the array using the array length as the index...this array holds the points possible for each assignment
+	//moreGrades = inputYesNo();
+}while(inputYesNo() == "YES");
 
 gradePercent = calcGradePercent(pointsEarned, pointsPossible, pointsEarned.length);
 gradeLetter = findGradeLetter(gradePercent);
