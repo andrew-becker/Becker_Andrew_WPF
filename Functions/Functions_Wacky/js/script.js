@@ -9,10 +9,9 @@ var arrayIndex = 0;
 var moreGrades = "NO";
 var pointsEarned = new Array();
 var pointsPossible = new Array();
-var message;
-var totalPointsEarned;
-var totalPointsPossible;
+var str;
 var gradeLetter;
+var gradePercent;
 
 
 alert("For this program you will enter the points earned \nfor an assignment and then on the next prompt \nenter the possible points for that grade");
@@ -26,10 +25,35 @@ do{
 	pointsEarned[arrayIndex] = inputNum(str);
 	str = "Enter the points possible for the same assignment.";
 	pointsPossible[arrayIndex] = inputNum(str);
-}while(inputYesNo() == "YES");
-//console.log(pointsEarned.length);
-console.log(findGradeLetter(80));
+	moreGrades = inputYesNo();
+}while(moreGrades == "YES");
 
+gradePercent = calcGradePercent(pointsEarned, pointsPossible, pointsEarned.length);
+gradeLetter = findGradeLetter(gradePercent);
+
+if(gradeLetter == "A" || gradeLetter == "E")
+{
+
+}
+else
+{
+
+}
+
+
+
+function calcGradePercent(earned, possible, arrayLength)
+{
+	var finalPercentage = 0;
+	var gradePercentage = new Array();
+	for(i=0; i < arrayLength; i++)
+	{
+		gradePercentage[i] = parseFloat(earned[i]) / parseFloat(possible[i]) * 100;
+		finalPercentage = parseFloat(gradePercentage[i]) + parseFloat(finalPercentage);
+	}
+	finalPercentage = parseFloat(finalPercentage) / parseInt(arrayLength);
+	return finalPercentage;
+}
 
 function inputNum(str)
 {
@@ -104,23 +128,5 @@ function findGradeLetter(gradePercent)
 		return "F";
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
