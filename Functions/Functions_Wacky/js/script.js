@@ -33,11 +33,11 @@ gradeLetter = findGradeLetter(gradePercent);
 
 if(gradeLetter == "A" || gradeLetter == "E")
 {
-
+	console.log("You earned an " + gradeLetter + " for this class with a " + parseInt(gradePercent) + "%.");
 }
 else
 {
-
+	console.log("You earned a " + gradeLetter + " for this class with a " + parseInt(gradePercent) + "%.");
 }
 
 
